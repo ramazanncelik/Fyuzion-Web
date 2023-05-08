@@ -98,7 +98,7 @@ const UpdatePasswordForm = ({ searchParamsData }) => {
                 </div> :
                 <button
                     type="submit"
-                    onPress={handleSubmit}
+                    onClick={handleSubmit}
                     className="w-96 p-2 rounded-lg items-center justify-center bg-orange-500 text-white hover:bg-orange-600 font-bold">
                     {language === "tr" ? "Şifre Değiştir" : "Change Password"}
                 </button>}

@@ -87,11 +87,12 @@ const Login = () => {
                 </div>
 
                 {loading ?
-                    <div className={`w-96 p-2 rounded-lg items-center justify-center flex flex-row border ${isDarkMode?"border-slate-500":"border-gray-200"}`}>
+                    <div className={`w-96 p-2 rounded-lg items-center justify-center flex flex-row border ${isDarkMode ? "border-slate-500" : "border-gray-200"}`}>
                         <Loading />
                     </div> :
                     <button
-                        onPress={handleSubmit}
+                        type="submit"
+                        onClick={handleSubmit}
                         className="w-96 p-2 rounded-lg items-center justify-center bg-orange-500 text-white hover:bg-orange-600 font-bold">
                         {language.includes("tr") ? "Giriş Yap" : "Login"}
                     </button>}

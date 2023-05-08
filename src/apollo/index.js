@@ -4,8 +4,8 @@ import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
 import { createClient } from 'graphql-ws';
 import { RetryLink } from '@apollo/client/link/retry';
 
-const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
-const HTTP_ENDPOINT = process.env.HTTP_ENDPOINT;
+const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT;
+const HTTP_ENDPOINT = process.env.NEXT_PUBLIC_HTTP_ENDPOINT;
 
 const httpLink = new HttpLink({
   uri: HTTP_ENDPOINT

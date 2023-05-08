@@ -6,7 +6,7 @@ import UpdatePasswordForm from '@/components/ResetPassword/UpdatePasswordForm'
 
 const ResetPassword = ({ searchParams }) => {
 
-    const { isDarkMode, language, changeUserId } = useAppContext();
+    const { isDarkMode } = useAppContext();
     const [searchParamsData, setSearchParamsData] = useState(null)
 
     useEffect(() => {
