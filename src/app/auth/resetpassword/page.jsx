@@ -12,6 +12,7 @@ const ResetPassword = ({ searchParams }) => {
     useEffect(() => {
 
         if (searchParams.Email && searchParams.ConfirmationCode) {
+            console.log(searchParams)
             setSearchParamsData({
                 Email: searchParams.Email,
                 ConfirmationCode: searchParams.ConfirmationCode
@@ -20,7 +21,7 @@ const ResetPassword = ({ searchParams }) => {
             setSearchParamsData(null);
         }
 
-    }, [searchParams])
+    }, [searchParams]);
 
 
     return (

@@ -53,11 +53,11 @@ const CreateMailForm = () => {
     return (
         <form onSubmit={handleSubmit} className={`flex flex-col space-y-2 items-center justify-center m-auto max-w-screen-xl h-full justify-center px-4`}>
 
-            <p className={`w-96 text-center font-bold text-2xl ${isDarkMode ? "text-white" : "text-black"}`}>
+            <p className={`w-72 md:w-96 text-center font-bold text-2xl ${isDarkMode ? "text-white" : "text-black"}`}>
                 {language === "tr" ? "Şifre Sıfırla" : "Reset Password"}
             </p>
 
-            <div className="w-96 flex flex-col space-y-2">
+            <div className="w-72 md:w-96 flex flex-col space-y-2">
                 <input
                     type="email"
                     className={`w-full mb-1 border p-2.5 rounded-lg text-sm ${isDarkMode ? "bg-slate-700 border-slate-500" : "bg-white border-gray-200"}`}
@@ -74,13 +74,13 @@ const CreateMailForm = () => {
             </div>
 
             {loading ?
-                <div className={`w-96 p-2 rounded-lg items-center justify-center flex flex-row border ${isDarkMode ? "border-slate-500" : "border-gray-200"}`}>
+                <div className={`w-72 md:w-96 p-2 rounded-lg items-center justify-center flex flex-row border ${isDarkMode ? "border-slate-500" : "border-gray-200"}`}>
                     <Loading />
                 </div> :
                 <button
                     type="submit"
                     onClick={handleSubmit}
-                    className="w-96 p-2 rounded-lg items-center justify-center bg-orange-500 text-white hover:bg-orange-600 font-bold">
+                    className="w-72 md:w-96 p-2 rounded-lg items-center justify-center bg-orange-500 text-white hover:bg-orange-600 font-bold">
                     {language === "tr" ? "Mail Al" : "Receive Mail"}
                 </button>}
 
