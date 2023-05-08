@@ -50,7 +50,7 @@ const UpdatePasswordForm = ({ searchParamsData }) => {
                 }
             }
         },
-        validationSchema: updatePasswordValidations
+        validationSchema: updatePasswordValidations(language)
     });
 
     return (

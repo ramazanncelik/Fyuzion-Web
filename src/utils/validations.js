@@ -1,7 +1,6 @@
 import { object, string, ref } from 'yup';
-const language = navigator.language;
 
-export const signUpValidations = object({
+export const signUpValidations = (language) => object({
     email: string()
         .required(language === "tr" ?
             'E-mail Adresi Boş Geçilemez'
@@ -43,7 +42,7 @@ export const signUpValidations = object({
             'Cannot be blank!'),
 });
 
-export const loginValidations = object({
+export const loginValidations = (language) => object({
     email: string()
         .required(language === "tr" ?
             'E-mail Adresi Boş Geçilemez'
@@ -64,7 +63,7 @@ export const loginValidations = object({
             'Password must be at least' + min + 'characters!'),
 });
 
-export const createResetPasswordMailValidations = object({
+export const createResetPasswordMailValidations = (language) => object({
     email: string()
         .required(language === "tr" ?
             'E-mail Adresi Boş Geçilemez'
@@ -76,7 +75,7 @@ export const createResetPasswordMailValidations = object({
             'Please enter a valid e-mail address!'),
 });
 
-export const updatePasswordValidations = object({
+export const updatePasswordValidations = (language) => object({
     password: string()
         .required(language === "tr" ?
             'Şifre Boş Geçilemez!'
@@ -96,7 +95,7 @@ export const updatePasswordValidations = object({
             'Cannot be blank!'),
 });
 
-export const newPostValidations = object({
+export const newPostValidations = (language) => object({
     Description: string()
         .required(language === "tr" ?
             'Açıklama Boş Geçilemez!'

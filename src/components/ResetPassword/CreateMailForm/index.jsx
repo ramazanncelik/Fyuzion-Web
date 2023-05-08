@@ -47,7 +47,7 @@ const CreateMailForm = () => {
                 }
             }
         },
-        validationSchema: createResetPasswordMailValidations
+        validationSchema: createResetPasswordMailValidations(language)
     });
 
     return (

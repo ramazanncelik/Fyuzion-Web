@@ -74,7 +74,7 @@ const SignUp = () => {
                     "Please Confirm the Terms of Use!");
             }
         },
-        validationSchema: signUpValidations
+        validationSchema: signUpValidations(language)
     });
 
     function usageAgreementModalOpen() {

@@ -43,7 +43,7 @@ const Login = () => {
                 }
             }
         },
-        validationSchema: loginValidations
+        validationSchema: loginValidations(language)
     });
 
     return (
