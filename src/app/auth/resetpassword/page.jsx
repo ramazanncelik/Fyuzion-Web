@@ -23,17 +23,20 @@ const ResetPassword = ({ searchParams }) => {
 
     }, [searchParams]);
 
-
-    return (
-        <div className={`mt-14 flex-1 ${isDarkMode ? "bg-slate-700 text-white" : "bg-white text-black"}`}>
-
-            {searchParamsData ?
+    if (searchParamsData !== null) {
+        return (
+            <div className={`mt-14 flex-1 ${isDarkMode ? "bg-slate-700 text-white" : "bg-white text-black"}`}>
                 <UpdatePasswordForm searchParamsData={searchParamsData} />
-                :
-                <CreateMailForm />}
+            </div>
+        );
+    } else {
+        return (
+            <div className={`mt-14 flex-1 ${isDarkMode ? "bg-slate-700 text-white" : "bg-white text-black"}`}>
+                <CreateMailForm />
+            </div>
+        );
+    }
 
-        </div>
-    );
 }
 
 export default ResetPassword;
