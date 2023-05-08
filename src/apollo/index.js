@@ -4,15 +4,15 @@ import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
 import { createClient } from 'graphql-ws';
 import { RetryLink } from '@apollo/client/link/retry';
 
-const GRAPHQL_ENDPOINT = 'wss://fyuzion-server.adaptable.app/graphql';
-const HTTP_ENDPOINT = 'https://fyuzion-server.adaptable.app/graphql';
+const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
+const HTTP_ENDPOINT = process.env.HTTP_ENDPOINT;
 
 const httpLink = new HttpLink({
-    uri: HTTP_ENDPOINT
+  uri: HTTP_ENDPOINT
 });
 
 const wsLink = new GraphQLWsLink(createClient({
-    url: GRAPHQL_ENDPOINT,
+  url: GRAPHQL_ENDPOINT,
 }));
 
 const retryLink = new RetryLink({
@@ -37,8 +37,8 @@ const link = split(
 const splitLink = retryLink.concat(link); // retryLink ve link'i birleştir
 
 const client = new ApolloClient({
-    link: splitLink,
-    cache: new InMemoryCache()
+  link: splitLink,
+  cache: new InMemoryCache()
 });
 
 export default client;
