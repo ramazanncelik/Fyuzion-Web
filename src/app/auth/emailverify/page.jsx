@@ -5,7 +5,7 @@ import { useMutation } from '@apollo/client';
 import { updateEmailVerify } from "@/apollo/User/userMutations";
 import { toast } from 'react-hot-toast';
 import CustomLoading from '@/components/CustomLoading';
-import { FaCheckCircle, FaExclamation, FaExclamationCircle, FaInfoCircle, FaXingSquare } from 'react-icons/fa';
+import { FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
 
 const EmailVerify = ({ searchParams }) => {
 
