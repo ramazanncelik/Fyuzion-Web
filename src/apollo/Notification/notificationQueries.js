@@ -8,10 +8,8 @@ export const getNotifications = gql`
             To
             Type
             PostId
-            FullDate
             Date
             Time
-            Month
             fromUser{
                 _id
                 NickName

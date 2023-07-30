@@ -7,10 +7,8 @@ export const getComments = gql`
             OwnerId
             PostId
             Description
-            FullDate
             Date
             Time
-            Month
             user {
                 _id
                 ImageUrl

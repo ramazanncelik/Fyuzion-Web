@@ -23,10 +23,16 @@ export const chatUpdated = gql`
             }
             Type
             LastMessage
-            FullDate
             Date
             Time
-            Month
+        }
+    }
+`;
+
+export const chatDeleted = gql`
+    subscription($user_id: ID!){
+        chatDeleted(user_id: $user_id) {
+            _id
         }
     }
 `;

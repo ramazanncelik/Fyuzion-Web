@@ -26,10 +26,8 @@ export const getPost = gql`
               Name
               ImageUrl
             }
-            FullDate
             Date
             Time
-            Month
           }
     }
 `;

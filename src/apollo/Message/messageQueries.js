@@ -12,22 +12,24 @@ export const getMessage = gql`
     query($message_id: ID!) {
         message(message_id: $message_id) {
             _id
+            From
             fromUser {
                 _id
                 NickName
                 Name
             }
+            To
+            Type
             Description
-            Files {
+            File {
                 FileName
                 FilePath
                 FileType
                 FileUrl
             }
-            FullDate
             Date
             Time
-            Month
+            IsEdited
         }
     }
 `;

@@ -5,8 +5,8 @@ import { useFormik } from "formik";
 import { useMutation } from "@apollo/client";
 import { createResetPasswordMail } from "@/apollo/User/userMutations";
 import { toast } from "react-hot-toast";
-import Loading from "@/components/Loading";
 import { useAppContext } from '@/contexts/AppContext'
+import CustomLoading from "@/components/CustomLoading";
 
 const CreateMailForm = () => {
 
@@ -52,7 +52,7 @@ const CreateMailForm = () => {
 
     return (
         <div className={`mt-14 flex-1 ${isDarkMode ? "bg-slate-700 text-white" : "bg-white text-black"}`}>
-            <form onSubmit={handleSubmit} className={`flex flex-col space-y-2 items-center justify-center m-auto max-w-screen-xl h-full justify-center px-4`}>
+            <form onSubmit={handleSubmit} className={`flex flex-col space-y-2 items-center justify-center m-auto max-w-screen-xl h-full px-4`}>
 
                 <p className={`w-72 md:w-96 text-center font-bold text-2xl ${isDarkMode ? "text-white" : "text-black"}`}>
                     {language === "tr" ? "Şifre Sıfırla" : "Reset Password"}
@@ -75,9 +75,12 @@ const CreateMailForm = () => {
                 </div>
 
                 {loading ?
-                    <div className={`w-72 md:w-96 p-2 rounded-lg items-center justify-center flex flex-row border ${isDarkMode ? "border-slate-500" : "border-gray-200"}`}>
-                        <Loading />
-                    </div> :
+                    <CustomLoading
+                        type={"pacman"}
+                        color={"white"}
+                        size={12}
+                        className={`w-72 md:w-96 p-2 rounded-lg items-center justify-center flex bg-orange-500`}
+                    /> :
                     <button
                         type="submit"
                         onClick={handleSubmit}

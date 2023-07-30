@@ -1,11 +1,9 @@
 "use client"
-
 import { useAppContext } from "@/contexts/AppContext";
 import { signUpValidations } from "@/utils/validations";
 import { useMutation } from "@apollo/client";
 import { addUser } from '@/apollo/User/userMutations'
 import { useState } from "react";
-import Loading from "@/components/Loading";
 import { useFormik } from "formik";
 import { defaultImage } from '@/utils/utils'
 import { toast } from "react-hot-toast";
@@ -13,6 +11,7 @@ import { useSelector } from 'react-redux';
 import store from "@/store";
 import { openModal } from "@/store/modal";
 import Modal from "@/components/Modal";
+import CustomLoading from "@/components/CustomLoading";
 
 const SignUp = () => {
 
@@ -46,6 +45,7 @@ const SignUp = () => {
                             Follower: 0,
                             MyFollowed: 0,
                             ConfirmationCode: (Math.floor(Math.random() * 90000) + 10000).toString(),
+                            Role: "User",
                             EmailVerify: false,
                             OnlineStatus: false,
                             UsageAgreement: usageAgreement,
@@ -90,7 +90,7 @@ const SignUp = () => {
 
             {open && <Modal name={open} data={data} />}
 
-            <form onSubmit={handleSubmit} className={`flex flex-col space-y-2 items-center justify-center m-auto max-w-screen-xl h-full justify-center px-4`}>
+            <form onSubmit={handleSubmit} className={`flex flex-col space-y-2 items-center justify-center m-auto max-w-screen-xl h-full px-4`}>
 
                 <p className={`w-72 md:w-96 text-center font-bold text-2xl ${isDarkMode ? "text-white" : "text-black"}`}>
                     {language.includes("tr") ? "Kayıt Ol" : "Sign In"}
@@ -194,9 +194,12 @@ const SignUp = () => {
 
 
                 {loading ?
-                    <div className={`w-72 md:w-96 p-2 rounded-lg items-center justify-center flex flex-row border ${isDarkMode ? "border-slate-500" : "border-gray-200"}`}>
-                        <Loading />
-                    </div> :
+                    <CustomLoading
+                    type={"pacman"}
+                    color={"white"}
+                    size={12}
+                    className={`w-72 md:w-96 p-2 rounded-lg items-center justify-center flex bg-orange-500`}
+                /> :
                     <button type="submit"
                         onClick={handleSubmit}
                         className="w-72 md:w-96 p-2 rounded-lg items-center justify-center bg-orange-500 text-white hover:bg-orange-600 font-bold">

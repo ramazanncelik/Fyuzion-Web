@@ -8,16 +8,22 @@ export const notificationCreated = gql`
             To
             Type
             PostId
-            FullDate
             Date
             Time
-            Month
             fromUser{
                 _id
                 NickName
                 Name
                 ImageUrl
             }
+        }
+    }
+`;
+
+export const notificationDeleted = gql`
+    subscription($user_id: ID!){
+        notificationDeleted(user_id: $user_id){
+            _id
         }
     }
 `;

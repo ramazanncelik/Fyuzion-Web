@@ -6,6 +6,12 @@ export const createMessage = gql`
     }
 `;
 
+export const updateMessage = gql`
+    mutation($data: UpdateMessageInput!){
+        updateMessage(data: $data)
+    }
+`;
+
 export const deleteMessage = gql`
     mutation($data: DeleteMessageInput!){
         deleteMessage(data: $data)

@@ -7,10 +7,8 @@ export const commentCreated = gql`
             OwnerId
             PostId
             Description
-            FullDate
             Date
             Time
-            Month
             user {
                 _id
                 ImageUrl

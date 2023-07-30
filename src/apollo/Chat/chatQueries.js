@@ -23,18 +23,8 @@ export const getChat = gql`
             }
             Type
             LastMessage
-            FullDate
             Date
             Time
-            Month
-        }
-    }
-`;
-
-export const chatControl = gql`
-    query($data: ChatInput!){
-        chatControl(data: $data) {
-            _id
         }
     }
 `;

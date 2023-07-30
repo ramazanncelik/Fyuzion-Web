@@ -1,14 +1,8 @@
 import { gql } from '@apollo/client';
 
-export const createChat = gql`
-    mutation($data: CreateChatInput!){
-        createChat(data: $data)
-    }
-`;
-
-export const updateChat = gql`
-    mutation($chatData: ChatInput!,$data: UpdateChatInput!){
-        updateChat(chatData: $chatData, data: $data)
+export const createOrUpdateChat = gql`
+    mutation createOrUpdateChat($fromToData: ChatFromToInput!, $data: ChatDataInput!){
+        createOrUpdateChat(fromToData: $fromToData, data: $data)
     }
 `;
 
